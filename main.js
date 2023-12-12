@@ -27,6 +27,9 @@ function agregaLínea() {
     actividades.push(inputNombreActividad.value);
     notas.push(parseFloat(inputNotaActividad.value));
 
+
+
+
     let línea = '<tr>'
     línea += `<td>${inputNombreActividad.value} </td>`;
     línea += `<td>${inputNotaActividad.value}</td>`;
@@ -47,8 +50,7 @@ function actualizarTabla() {
 
 function actualizaPromedio() {
     const promedio = calculaPromedio();
-
-    document.getElementById('promedio-final').innerHTML = promedio;
+    document.getElementById('promedio-final').innerHTML = promedio.toFixed(2);
     document.getElementById('promedio-resultado').innerHTML = promedio >= notaMínima ? spanAprobado : spanDesaprobado;
 }
 
